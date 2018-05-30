@@ -1,0 +1,5 @@
+---
+- name: MySQL/Maria
+  hosts: sql-servers
+  roles:
+    - database
