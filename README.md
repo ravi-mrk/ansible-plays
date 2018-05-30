@@ -90,9 +90,7 @@ Databases are defined with a dict containing the fields `name:` (required), and 
 
 ```Yaml
 mariadb_databases:
-  - name: appdb1
-  - name: appdb2
-    init_script: files/init_appdb2.sql
+  - name: chembl_23
 ```
 
 ### Adding users
