@@ -1,3 +1,0 @@
----
-[mysql-servers]
-172.23.41.125    ansible_port=32771
