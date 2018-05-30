@@ -8,12 +8,12 @@
 - Execute this command : "ansible-playbook database.yml" to execute the playbook and append -vvv like "ansible-playbook database.yml -vvv" to check all the execution logs with verbose.
 
 
-# This will execute all the roles tasks defined for creating database, user and restore the backup into the database as required.
+* This will execute all the roles tasks defined for creating database, user and restore the backup into the database as required.
 
-######################################### EXPLINATION #########################################
+##################################### EXPLINATION #####################################
 
-*** Using MariaDB, a database that is forked out of MySQL and is better supported and highly secured. Same can be accomplished by replacing Mariadb with MySQL parameters or even simply by using a highly used ansible-galaxy role like mysql supported by Geerlingguy(https://github.com/geerlingguy/ansible-role-mysql/tree/master/vars).
-***
+** Using MariaDB, a database that is forked out of MySQL and is better supported and highly secured. Same can be accomplished by replacing Mariadb with MySQL parameters or even simply by using a highly used ansible-galaxy role like mysql supported by Geerlingguy(https://github.com/geerlingguy/ansible-role-mysql/tree/master/vars).
+**
 
 # Ansible role for `mariadb` is as follows:
 
