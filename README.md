@@ -1,11 +1,12 @@
 # Steps to execute this Playbook:
 
-- Make sure you hav ansible is installed pon your local machine either directly using "brew update && brew install ansible" if your OS is MAC or follow this guide (https://www.ansible.com/integrations/infrastructure/windows) for executing on windows OS.
+- Make sure you have ansible (version: 2.0+) installed on your local machine either directly using "brew update && brew install ansible" if your OS is MAC or follow this guide (https://www.ansible.com/integrations/infrastructure/windows) for executing on windows OS.
 - Get the users ssh public key by executing "cat ~/.ssh/id_rsa.pub".
 - If no such file is present, execute "ssh-keygen" (or) follow https://www.ssh.com/ssh/keygen/ to generate an ssh-key to authorise your system with the target server on which the MySQL is to installed.
-- ssh or login into the target/remote server as "root" (using ssh root@<target machine ip> -P <port>)and Add this key in the ~/.ssh/authorized_keys file in the target server where this play book will be executed.
-- check if the ssh connection is successful onto the target machine from your host machine using "ssh root@<target machine ip> -P <port>
-- Clone this repository into your host / local machine using "git clone https://github.com/ravi-mrk/ansible-plays.git"
+- ssh or login into the target/remote server as "root" (using ssh root@<target machine ip> -P <port>)and Add this key in the ~/.ssh/authorized_keys file in the target server where this play book will be executed. Execute below command on target server to add the key:
+  "vim ~/.ssh/authorized_keys" or "nano ~/.ssh/authorized_keys" (refer https://help.dreamhost.com/hc/en-us/articles/115006413028-Creating-and-editing-a-file-via-SSH for detailed instructions)
+- check if the ssh connection is successful onto the target machine from your host machine using "ssh root@<target machine ip> -P <port>"
+- Clone this repository into your ansible-host / local machine using "git clone https://github.com/ravi-mrk/ansible-plays.git"
 - execute "cd ansible-plays" and go into this cloned repository. 
 - In the inventories/production/database file of this repository, replace the IP and the ansible_port values with the target machines IP(public IP using "ifconfig" or "hostname -i" command executed on target server) and ssh port (usually 22)
 - Execute this command : "ansible-playbook database.yml" to execute the playbook and append -vvv like "ansible-playbook database.yml -vvv" to check all the execution logs with verbose.
