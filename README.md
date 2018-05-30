@@ -3,12 +3,15 @@
 - Make sure you hav ansible is installed pon your local machine either directly using "brew update && brew install ansible" if your OS is MAC or follow this guide (https://www.ansible.com/integrations/infrastructure/windows) for executing on windows OS.
 - Get the users ssh public key by executing "cat ~/.ssh/id_rsa.pub".
 - If no such file is present, execute "ssh-keygen" (or) follow https://www.ssh.com/ssh/keygen/ to generate an ssh-key to authorise your system with the target server on which the MySQL is to installed.
-- Add this key in the ~/.ssh/authorized_keys file in the target server where this play book will be executed.
-- In the inventories/production/database file, replace the IP and the ansible_port values with the target machines IP(public IP using "ifconfig" or "hostname -i" command) and ssh port (usually 22)
+- ssh or login into the target/remote server as "root" (using ssh root@<target machine ip> -P <port>)and Add this key in the ~/.ssh/authorized_keys file in the target server where this play book will be executed.
+- check if the ssh connection is successful onto the target machine from your host machine using "ssh root@<target machine ip> -P <port>
+- Clone this repository into your host / local machine using "git clone https://github.com/ravi-mrk/ansible-plays.git"
+- execute "cd ansible-plays" and go into this cloned repository. 
+- In the inventories/production/database file of this repository, replace the IP and the ansible_port values with the target machines IP(public IP using "ifconfig" or "hostname -i" command executed on target server) and ssh port (usually 22)
 - Execute this command : "ansible-playbook database.yml" to execute the playbook and append -vvv like "ansible-playbook database.yml -vvv" to check all the execution logs with verbose.
 
 
-* This will execute all the roles tasks defined for creating database, user and restore the backup into the database as required.
+* This will execute all the roles/tasks defined for creating database, user and restore the backup into the database as required.
 
 ##################################### EXPLINATION #####################################
 
