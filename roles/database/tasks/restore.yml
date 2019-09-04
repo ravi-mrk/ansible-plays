@@ -1,7 +1,7 @@
 ---
 - name: unzip the dump file
   unarchive:
-    src: ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_23_mysql.tar.gz
+    src: ftp://ftp.test.com/pub/databases/test/Testdb/latest/user_23_mysql.tar.gz
     dest: /tmp
     remote_src: yes
 
@@ -9,6 +9,6 @@
     name: chembl_23
     state: import
     login_host: localhost
-    login_user: chembl
+    login_user: user
     login_password: devops
-    target: /tmp/chembl_23/chembl_23_mysql/chembl_23_mysql.dmp
+    target: /tmp/user_23/user_23_mysql/user_23_mysql.dmp
