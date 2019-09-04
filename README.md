@@ -94,7 +94,7 @@ Databases are defined with a dict containing the fields `name:` (required), and 
 
 ```Yaml
 mariadb_databases:
-  - name: chembl_23
+  - name: user_23
 ```
 
 ### Adding users
@@ -103,7 +103,7 @@ Users are defined with a dict containing fields `name:`, `password:`, `priv:`, a
 
 ```Yaml
 mariadb_users:
-  - name: chembl
+  - name: user
     password: devops
     priv: '*.*:ALL,GRANT'
     host: 'localhost'
