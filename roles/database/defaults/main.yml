@@ -1,9 +1,9 @@
 # roles/mariadb/defaults/main.yml
 ---
 
-mariadb_databases: 'chembl_23'
+mariadb_databases: 'user_23'
 mariadb_users:
-  - name: 'chembl'
+  - name: 'user'
     password: devops
     priv: '*.*:ALL,GRANT'
 mariadb_root_password: 'devops'
